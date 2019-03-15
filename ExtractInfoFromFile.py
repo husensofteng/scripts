@@ -14,7 +14,7 @@ def parse_commandline_args():
     parser.add_argument('-f1', help= "the file that lacks the ID column", required=True)
     parser.add_argument('-f2', help= "the file that has the ID column", required=True)
     parser.add_argument('-fo', help= "output file name", default = 'outputfile.tsv')
-    parser.add_argument('-sep', help= "split character", default = '\t')
+    parser.add_argument('-sep', help= "split character", default = ' ')
     parser.add_argument('--cols_f1', default = '0,1,2,3', 
                         help= "index of columns to consider to match from file 1. For example to consider chromsome and position write 0,1")
     parser.add_argument('--cols_f2', default = '0,1,2,3', 
@@ -36,6 +36,8 @@ def read_file2():
             if l.startswith('#'):
                 continue
             sl = l.strip().split(sep)
+            if sep == ' ':
+                sl = ' '.join(l.strip().split()).split(sep)
             try:
                 search_cols = '#'.join([sl[int(x)] for x in args.cols_f2.split(',')])
                 dict_f2[search_cols]  = [sl[int(x)] for x in args.cols_to_extract_from_f2.split(',')]
@@ -58,6 +60,8 @@ def add_cols_to_f1(dict_f2):
                 fo.write(l)
                 continue
             sl = l.strip().split(sep)
+            if sep == ' ':
+                sl = ' '.join(l.strip().split()).split(sep)
             try:
                 search_cols = '#'.join([sl[int(x)] for x in args.cols_f1.split(',')])
             except IndexError:
