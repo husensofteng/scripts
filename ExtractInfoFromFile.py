@@ -44,7 +44,7 @@ def read_file2():
             except IndexError:
                 print("more columns are given for (cols_f2) or (cols_to_extract_from_f2 parameters) than what exists on line {line}.".format(line=l))
                 sys.exit()
-    print("{} lines are read into memory from {}.", len(dict_f2), args.f2)
+    #print("{} lines are read into memory from {}.".format( len(dict_f2), args.f2))
     return dict_f2
     
 def add_cols_to_f1(dict_f2):
