@@ -31,7 +31,6 @@ optional arguments:
                         should have the same number of columns as cols_f1
                         
   --cols_to_extract_from_f2 COLS_TO_EXTRACT_FROM_F2
-  
                         index of the columns to be extracted from file 2 and
                         added to the matches in file1, to just get id from the
                         second file write 2
