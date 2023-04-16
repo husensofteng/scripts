@@ -1,17 +1,17 @@
-#  scripts
+#  Scripts
 Scripts for handy tasks
 
-ExtractInfoFromFile
+## ExtractInfoFromFile
+
 To get desired columns from a file into another one based on seleceted column matches.
+Get colums from the second file for the first file.
 
-Usage: 
+### Usage: 
 
+```
 ExtractInfoFromFile.py [-h] -f1 F1 -f2 F2 [-fo FO] [-sep SEP]
                               [--cols_f1 COLS_F1] [--cols_f2 COLS_F2]
                               [--cols_to_extract_from_f2 COLS_TO_EXTRACT_FROM_F2]
-                              
-
-Get colums from the second file for the first file
 
 
 optional arguments:
@@ -36,3 +36,4 @@ optional arguments:
   index of the columns to be extracted from file 2 and added to the matches in file1, to just get id from the second file write 2.
                         
 
+```
